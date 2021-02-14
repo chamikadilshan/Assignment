@@ -7,7 +7,7 @@ server_response=$(curl -I "3.80.100.122")
 
 if ssh -i private.key ec2-user@ec2-3-80-100-122.compute-1.amazonaws.com -y systemctl status nginx | grep -w "Active: active (running)" ; then
 
-	   echo "Nginx is up and running"; mysql -h server-stat-db.cpklkizt7iu7.us-east-1.rds.amazonaws.com --user=rootadmin --password=mQx9w3gQ8sCe serverstatus << EOF
+	   echo "Nginx is up and running"; mysql -h server-public-domain --user=example --password=example serverstatus << EOF
 	   INSERT INTO script_state (\`Datetime\`,\`response\`) VALUES ('$now','$server_response');
 EOF
 	   
