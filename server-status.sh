@@ -1,7 +1,6 @@
 #!/bin/bash
 
 now=$(date)
-#nginx_status=$(systemctl status nginx | grep -w "Active: active (running)")
 server_response=$(curl -I "3.80.100.122") #Get real time http response from web server
 
 #Check whether nginx server is runinig by ssh into the server 
