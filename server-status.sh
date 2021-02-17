@@ -3,7 +3,7 @@
 now=$(date)
 server_response=$(curl -I "3.80.100.122") #Get real time http response from web server
 
-#Check whether nginx server is runinig by ssh into the server 
+#Check whether nginx server is running by ssh into the server 
 if ssh -i private.key ec2-user@ec2-3-80-100-122.compute-1.amazonaws.com -y systemctl status nginx | grep -w "Active: active (running)" ; then
 
 	   echo "Nginx is up and running"; mysql -h server-public-domain --user=example --password=example serverstatus << EOF
